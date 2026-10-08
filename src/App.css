@@ -1,0 +1,670 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --cream: #fffaf0;
+  --ink: #202020;
+  --coral: #ff6b57;
+  --yellow: #ffd84d;
+  --blue: #8ed8ff;
+  --green: #bde986;
+  --purple: #c9b8ff;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+  height: 76px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--cream);
+  border-bottom: 2px solid var(--ink);
+}
+
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.logo::before {
+  content: "✦";
+  color: var(--coral);
+  font-size: 17px;
+  margin-right: 6px;
+}
+
+.logo span {
+  color: var(--coral);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--coral);
+}
+
+.profile-btn {
+  border: 2px solid var(--ink);
+  background: var(--yellow);
+  padding: 11px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.profile-btn:hover {
+  transform: translateY(-2px) rotate(-1deg);
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+  max-width: 1250px;
+  margin: auto;
+  padding: 75px 40px 85px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "₹";
+  position: absolute;
+  top: 45px;
+  right: 40px;
+  width: 55px;
+  height: 55px;
+  background: var(--coral);
+  color: white;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  font-weight: 700;
+  transform: rotate(12deg);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: var(--green);
+  border: 2px solid var(--ink);
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  max-width: 720px;
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -4px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.hero h1 span {
+  color: var(--coral);
+  display: inline;
+}
+
+.hero-text {
+  max-width: 560px;
+  margin-top: 25px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.search-box {
+  margin-top: 30px;
+  max-width: 620px;
+  display: flex;
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 18px;
+  font-size: 14px;
+  background: white;
+}
+
+.search-box button {
+  border: none;
+  background: var(--coral);
+  color: white;
+  padding: 0 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #f25340;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 12px;
+}
+
+.quick-links span {
+  color: #777;
+}
+
+.quick-links a {
+  background: white;
+  border: 1px solid #bbb;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.quick-links a:hover {
+  background: var(--yellow);
+  border-color: var(--ink);
+}
+
+/* ---------------- HERO VISUAL ---------------- */
+
+.hero-card {
+  position: relative;
+  background: var(--blue);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 28px;
+  padding: 30px;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 9px 9px 0 var(--ink);
+  transform: rotate(2deg);
+}
+
+.hero-card::before {
+  content: "GOOD NEWS!";
+  position: absolute;
+  top: -23px;
+  left: -22px;
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  padding: 8px 13px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  transform: rotate(-8deg);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card-icon {
+  width: 75px;
+  height: 75px;
+  background: var(--coral);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  color: white;
+  margin-top: 20px;
+}
+
+.hero-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  margin: 20px 0 0;
+}
+
+.hero-card p {
+  max-width: 330px;
+  line-height: 1.5;
+  color: #343434;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.card-tags span {
+  background: white;
+  border: 1.5px solid var(--ink);
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ---------------- CATEGORIES ---------------- */
+
+.categories {
+  background: var(--ink);
+  color: white;
+  padding: 80px 6%;
+}
+
+.section-heading {
+  max-width: 1180px;
+  margin: auto auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.categories .eyebrow {
+  background: var(--yellow);
+  color: var(--ink);
+  border-color: white;
+}
+
+.section-heading h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 43px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.view-all {
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.category-grid {
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.category-card {
+  min-height: 245px;
+  padding: 25px;
+  position: relative;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  color: var(--ink);
+  transition: 0.2s;
+}
+
+.category-card:nth-child(1) {
+  background: var(--yellow);
+}
+
+.category-card:nth-child(2) {
+  background: var(--blue);
+}
+
+.category-card:nth-child(3) {
+  background: var(--green);
+}
+
+.category-card:nth-child(4) {
+  background: var(--purple);
+}
+
+.category-card:hover {
+  transform: translateY(-7px) rotate(-1deg);
+}
+
+.category-number {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.category-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  margin-top: 65px;
+}
+
+.category-card p {
+  color: #444;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  width: 34px;
+  height: 34px;
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+/* ---------------- WHY SECTION ---------------- */
+
+.why-section {
+  max-width: 1180px;
+  margin: auto;
+  padding: 100px 30px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 90px;
+}
+
+.why-section h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.features div {
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 17px;
+  padding: 22px;
+  transition: 0.2s;
+}
+
+.features div:hover {
+  transform: translateX(7px);
+}
+
+.features span {
+  display: inline-block;
+  background: var(--coral);
+  color: white;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  text-align: center;
+  padding-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.features h3 {
+  font-size: 19px;
+  margin-top: 12px;
+}
+
+.features p {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+  background: var(--yellow);
+  border-top: 2px solid var(--ink);
+  padding: 40px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-size: 13px;
+  color: #444;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+  }
+
+  .hero-card {
+    transform: none;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .why-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box button {
+    padding: 15px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+}
+
+/* ---------------- CTA SECTION ---------------- */
+
+.cta-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 90px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+}
+
+.cta-content {
+  max-width: 700px;
+}
+
+.cta-content .eyebrow {
+  background: var(--green);
+}
+
+.cta-content h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(45px, 6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin: 0;
+}
+
+.cta-content p:not(.eyebrow) {
+  margin-top: 22px;
+  max-width: 500px;
+  color: #666;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.cta-button {
+  margin-top: 25px;
+  border: 2px solid var(--ink);
+  background: var(--coral);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: 0.2s;
+}
+
+.cta-button:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* FUN STICKER */
+
+.cta-sticker {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: var(--yellow);
+  border: 3px solid var(--ink);
+  box-shadow: 7px 7px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(8deg);
+  flex-shrink: 0;
+}
+
+.cta-sticker span {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.cta-sticker strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 38px;
+  line-height: 1;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+  background: var(--yellow);
+  border-top: 2px solid var(--ink);
+  padding: 42px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #444;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- CTA MOBILE ---------------- */
+
+@media (max-width: 700px) {
+  .cta-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-sticker {
+    align-self: center;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+}
